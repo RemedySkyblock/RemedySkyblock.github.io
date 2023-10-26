@@ -1,0 +1,71 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Minecraft Recipes - Spawner Requirements</title>
+        <style>
+            .tooltip {
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: #fff;
+                padding: 5px;
+                border-radius: 5px;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+            }
+        </style>
+        <script>
+            // JavaScript for hover functionality
+            const ingredientImages = document.querySelectorAll('img[data-name]');
+        
+            ingredientImages.forEach(image => {
+                image.addEventListener('mouseover', () => {
+                    const ingredientName = image.getAttribute('data-name');
+                    // Create a tooltip or a pop-up div to display the ingredient name
+                    // You can use CSS for styling and positioning the tooltip
+                    const tooltip = document.createElement('div');
+                    tooltip.textContent = ingredientName;
+                    tooltip.className = 'tooltip'; // Add CSS class for styling
+                    image.appendChild(tooltip); // Attach the tooltip to the ingredient image
+                });
+        
+                image.addEventListener('mouseout', () => {
+                    const tooltip = image.querySelector('.tooltip');
+                    if (tooltip) {
+                        image.removeChild(tooltip); // Remove the tooltip when mouse leaves the image
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+    
+        <div class="recipe">
+            <h2>Output: spawner_core</h2>
+            <div class="output-item">
+                <img src="items/spawner_core.png" data-name="spawner_core">
+                <p>Recipe:</p>
+            </div>
+            <table>
+        <tr><td><img src="items/iron_ingot.png" data-name="iron_ingot"></td><td><img src="items/diamond.png" data-name="diamond"></td><td><img src="items/iron_ingot.png" data-name="iron_ingot"></td></tr><tr><td><img src="items/diamond.png" data-name="diamond"></td><td><img src="items/gold_block.png" data-name="gold_block"></td><td><img src="items/diamond.png" data-name="diamond"></td></tr><tr><td><img src="items/iron_ingot.png" data-name="iron_ingot"></td><td><img src="items/diamond.png" data-name="diamond"></td><td><img src="items/iron_ingot.png" data-name="iron_ingot"></td></tr>
+            </table>
+        </div>
+        <hr> <!-- Add a horizontal rule between recipes -->
+        
+        <div class="recipe">
+            <h2>Output: empty_spawner</h2>
+            <div class="output-item">
+                <img src="items/empty_spawner.png" data-name="empty_spawner">
+                <p>Recipe:</p>
+            </div>
+            <table>
+        <tr><td><img src="items/iron_bars.png" data-name="iron_bars"></td><td><img src="items/iron_block.png" data-name="iron_block"></td><td><img src="items/iron_bars.png" data-name="iron_bars"></td></tr><tr><td><img src="items/iron_bars.png" data-name="iron_bars"></td><td><img src="items/spawner_core.png" data-name="spawner_core"></td><td><img src="items/iron_bars.png" data-name="iron_bars"></td></tr><tr><td><img src="items/iron_bars.png" data-name="iron_bars"></td><td><img src="items/iron_block.png" data-name="iron_block"></td><td><img src="items/iron_bars.png" data-name="iron_bars"></td></tr>
+            </table>
+        </div>
+        <hr> <!-- Add a horizontal rule between recipes -->
+        
+    </body>
+    </html>
+    
